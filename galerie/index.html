@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerie – Vogelhaus Evy | Bilder aus der Papageienpension</title>
+  <meta name="description" content="Bildergalerie des Vogelhaus Evy – Papageien, Sittiche, das Papageienzimmer und gerettete Wildvögel aus der familiären Vogelpension im Rems-Murr-Kreis." />
+  <link rel="canonical" href="https://www.vogelhaus-evy.de/galerie/" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+  <link rel="stylesheet" href="../css/farben.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .gallery-placeholder {
+      background: var(--color-kachel);
+      border-radius: var(--radius-card);
+      padding: 80px 40px;
+      text-align: center;
+      border: 2px dashed var(--color-primary);
+    }
+    .gallery-placeholder-icon { font-size: 72px; margin-bottom: 24px; }
+    .gallery-placeholder h3 { font-size: 24px; color: var(--color-navy); margin-bottom: 12px; }
+    .gallery-placeholder p { color: var(--color-text-muted); font-size: 16px; max-width: 480px; margin: 0 auto 24px; }
+
+    .gallery-categories {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .gallery-cat-btn {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 8px 20px;
+      border-radius: 99px;
+      border: 2px solid var(--color-border);
+      background: var(--color-bg-card);
+      color: var(--color-text);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+
+    .gallery-cat-btn.active,
+    .gallery-cat-btn:hover {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: #fff;
+    }
+
+    /* Demo gallery items */
+    .gallery-demo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-demo-item {
+      border-radius: 12px;
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+      background: var(--color-kachel);
+      border: 2px solid var(--color-border);
+      transition: transform var(--transition), box-shadow var(--transition);
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-demo-item:hover {
+      transform: scale(1.04);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .gallery-demo-item .label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(47,58,136,0.85);
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 12px;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform var(--transition);
+    }
+
+    .gallery-demo-item:hover .label { transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .gallery-demo-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="main-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../" class="nav-logo">
+          <img src="../bilder/logo_evy_vogelpension.jpg" alt="Vogelhaus Evy Logo" />
+          <div class="nav-logo-text">
+            Vogelhaus Evy
+            <span>Die familiäre Vogelpension</span>
+          </div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../ueber-mich/">Über mich</a></li>
+          <li><a href="./" class="active">Bilder</a></li>
+          <li><a href="../was-bisher-geschah/">Was bisher geschah</a></li>
+          <li><a href="../links/">Links</a></li>
+          <li><a href="../gaestebuch/">Gästebuch</a></li>
+          <li><a href="../kontakt/" class="nav-cta">Kontakt</a></li>
+        </ul>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="nav-mobile" id="nav-mobile">
+        <a href="../">Startseite</a>
+        <a href="../ueber-mich/">Über mich</a>
+        <a href="./">Bilder</a>
+        <a href="../was-bisher-geschah/">Was bisher geschah</a>
+        <a href="../links/">Links</a>
+        <a href="../gaestebuch/">Gästebuch</a>
+        <a href="../kontakt/">Kontakt</a>
+      </nav>
+    </div>
+  </nav>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner">
+    <div class="page-banner-inner">
+      <div class="section-tag">Bilder</div>
+      <h1>Einblicke ins Vogelhaus Evy</h1>
+      <p>Papageien, Sittiche, das Papageienzimmer, der Garten und gerettete Wildvögel – hier sehen Sie, was uns ausmacht.</p>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="../">Startseite</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Galerie</span>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section style="background: var(--color-bg);">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-tag">Unsere Galerie</div>
+        <h2 class="section-title">Bilder aus dem Vogelhaus</h2>
+        <p class="section-subtitle">Einblicke in unseren Alltag mit gefiederten Gästen und unseren eigenen Amazonen.</p>
+      </div>
+
+      <!-- Category Buttons -->
+      <div class="gallery-categories">
+        <button class="gallery-cat-btn active">Alle Bilder</button>
+        <button class="gallery-cat-btn">Papageien & Sittiche</button>
+        <button class="gallery-cat-btn">Das Papageienzimmer</button>
+        <button class="gallery-cat-btn">Wildvögel</button>
+        <button class="gallery-cat-btn">Garten & Natur</button>
+      </div>
+
+      <!-- Echte Fotos aus bilder/papageien/ -->
+      <div class="gallery-demo-grid">
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Calimero.jpg" alt="Calimero – Papagei im Vogelhaus Evy" loading="lazy" />
+          <div class="label">Calimero</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Cali P1080259.jpg" alt="Cali im Vogelhaus Evy" loading="lazy" />
+          <div class="label">Cali</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Chico u.China 2010 003.jpg" alt="Chico und China" loading="lazy" />
+          <div class="label">Chico &amp; China</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Chico.fliegt.P1080633.jpg" alt="Chico im Flug" loading="lazy" />
+          <div class="label">Chico im Flug</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/China.im.Flug.P1080638.jpg" alt="China im Flug" loading="lazy" />
+          <div class="label">China im Flug</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Coco Gelbhaubenkakadu 006.jpg" alt="Coco – Gelbhaubenkakadu" loading="lazy" />
+          <div class="label">Coco – Kakadu</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Coco Gelbscheitelamazone 237.jpg" alt="Coco – Gelbscheitelamazone" loading="lazy" />
+          <div class="label">Coco – Amazone</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Cooky und die Wellis.JPG" alt="Cooky und die Wellensittiche" loading="lazy" />
+          <div class="label">Cooky &amp; Wellis</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Emmy und Jako,Venezuela.JPG" alt="Emmy und Jako aus Venezuela" loading="lazy" />
+          <div class="label">Emmy &amp; Jako</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Flora Gelbscheitelamazone.jpg" alt="Flora – Gelbscheitelamazone" loading="lazy" />
+          <div class="label">Flora – Amazone</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Gonzo und Kiki, Mohrenkopfpapageien.jpg" alt="Gonzo und Kiki – Mohrenkopfpapageien" loading="lazy" />
+          <div class="label">Gonzo &amp; Kiki</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Lola 014.jpg" alt="Lola im Vogelhaus Evy" loading="lazy" />
+          <div class="label">Lola</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Nymphensittich auf Sonnenblume.jpg" alt="Nymphensittich auf einer Sonnenblume" loading="lazy" />
+          <div class="label">Nymphensittich</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Rosella.JPG" alt="Rosellasittich im Vogelhaus Evy" loading="lazy" />
+          <div class="label">Rosella</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/Rudi 2013 neu.JPG" alt="Rudi im Vogelhaus Evy" loading="lazy" />
+          <div class="label">Rudi</div>
+        </div>
+        <div class="gallery-demo-item">
+          <img src="../bilder/papageien/George.JPG" alt="George im Vogelhaus Evy" loading="lazy" />
+          <div class="label">George</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WILDVÖGEL SEKTION -->
+  <section style="background: var(--color-bg-card);">
+    <div class="container">
+      <div class="section-header center">
+        <div class="section-tag">Wildvogel-Rettungen</div>
+        <h2 class="section-title">Gerettete Wildvögel</h2>
+        <p class="section-subtitle">
+          All den geretteten Wildvögeln wünschen wir von Herzen alles Gute in der Freiheit!
+          Unsere Bildergalerie zeigt die kleinen Helden, denen wir helfen konnten.
+        </p>
+      </div>
+
+      <div class="note-card blue" style="max-width: 680px; margin: 0 auto;">
+        <h3>🌿 Wildvogelhilfe</h3>
+        <p>
+          Da wir durch und durch vogelsüchtig sind, helfen wir auch gerne, wenn ein
+          Wildvogelkind in Not geraten ist. Aus Zeitgründen ist es uns nicht immer
+          möglich, ein in Not geratenes Wildvogelkind selbst aufzupäppeln – doch
+          leisten wir gerne <strong>telefonische Hilfe</strong>. Rufen Sie uns an!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="../bilder/logo_evy_vogelpension.jpg" alt="Vogelhaus Evy" />
+          <p>Die familiäre Papageien- und Sittichpension im Rems-Murr-Kreis. Liebevoll, fachkundig, seit 2007.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Seiten</h4>
+          <ul>
+            <li><a href="../">Startseite</a></li>
+            <li><a href="../ueber-mich/">Über mich</a></li>
+            <li><a href="../leistungen/">Leistungen</a></li>
+            <li><a href="../virentests/">Virentests</a></li>
+            <li><a href="./">Galerie</a></li>
+            <li><a href="../kontakt/">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+497183307888">07183 / 307888</a></li>
+            <li><a href="#">📠 07183 / 307878</a></li>
+            <li><a href="https://maps.google.com/?q=Apfelweg+16,+73635+Rudersberg" target="_blank" rel="noopener">📍 Apfelweg 16, Rudersberg</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Vogelhaus Evy – Die familiäre Vogelpension.</div>
+        <div class="footer-bottom-links">
+          <a href="../datenschutz/">Datenschutz</a>
+          <a href="../impressum/">Impressum</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scroll-top" aria-label="Nach oben">↑</button>
+  <script>
+    const nav = document.getElementById('main-nav');
+    const scrollTopBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+    });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('nav-mobile').classList.toggle('open');
+    });
+    document.querySelectorAll('.gallery-cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.gallery-cat-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

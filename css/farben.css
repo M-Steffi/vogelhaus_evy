@@ -1,0 +1,71 @@
+/* ============================================================
+   VOGELHAUS EVY – CI-Farben
+   Basierend auf dem Original-CSS von vogelhaus-evy.de
+   ============================================================ */
+
+:root {
+
+  /* --- Primärfarbe: Evy-Grün --- */
+  --evy-gruen:          #0BAA29;   /* Hauptfarbe, Hintergründe, Buttons */
+  --evy-gruen-dunkel:   #0D8223;   /* Hover, Schatten, dunklere Variante */
+  --evy-gruen-hell:     #3dc455;   /* Highlights, Verläufe */
+  --evy-gruen-kachel:   #ceeed4;   /* Kacheln, helle Hintergrundflächen */
+
+  /* --- Sekundärfarbe: Evy-Blau --- */
+  --evy-blau:           #2F3A88;   /* Navigation, Überschriften, Footer */
+  --evy-blau-dunkel:    #1e2660;   /* Dunklere Variante für Verläufe */
+  --evy-blau-hell:      #b9e3f9;   /* Info-Boxen, helle Flächen */
+
+  /* --- Akzentfarbe: Evy-Gold --- */
+  --evy-gold:           #EFCD32;   /* Hover-Farbe Links & Menü, Highlights */
+  --evy-gold-hell:      #f7e06a;   /* Hellere Variante, Badge-Hintergründe */
+  --evy-gold-kachel:    #f1e83a;   /* Original .yellow Klasse */
+
+  /* --- Neutrale Töne --- */
+  --evy-weiss:          #ffffff;
+  --evy-schwarz:        #000000;
+  --evy-text:           #1a1a1a;   /* Haupttextfarbe */
+  --evy-text-hell:      #4a5568;   /* Sekundärtextfarbe, Untertitel */
+  --evy-bg:             #edf7ef;   /* Seitenhintergrund (zartes Grün-Weiß) */
+  --evy-border:         #c8e6cc;   /* Rahmenfarben */
+  --evy-dunkel:         #2b2b25;   /* Dunkle Bereiche (Original .traurig) */
+
+}
+
+/*
+  ============================================================
+  SCHNELLREFERENZ – VERWENDUNG
+  ============================================================
+
+  Hauptfarbe Grün:      var(--evy-gruen)
+  Dunkelgrün:           var(--evy-gruen-dunkel)
+  Hellgrün Kacheln:     var(--evy-gruen-kachel)
+
+  Navigation/Footer:    var(--evy-blau)
+  Info-Boxen hell:      var(--evy-blau-hell)
+
+  Hover / Akzent:       var(--evy-gold)
+  Badges / Tags:        var(--evy-gold-hell)
+
+  Fließtext:            var(--evy-text)
+  Hintergrund Seite:    var(--evy-bg)
+
+  ============================================================
+  FARBPALETTE ALS HEX (zur Weitergabe an Druckdienstleister
+  oder andere Designer)
+  ============================================================
+
+  Evy-Grün          #0BAA29    RGB(11, 170, 41)
+  Evy-Grün dunkel   #0D8223    RGB(13, 130, 35)
+  Evy-Grün hell     #3dc455    RGB(61, 196, 85)
+  Evy-Grün Kachel   #ceeed4    RGB(206, 238, 212)
+
+  Evy-Blau          #2F3A88    RGB(47, 58, 136)
+  Evy-Blau dunkel   #1e2660    RGB(30, 38, 96)
+  Evy-Blau hell     #b9e3f9    RGB(185, 227, 249)
+
+  Evy-Gold          #EFCD32    RGB(239, 205, 50)
+  Evy-Gold hell     #f7e06a    RGB(247, 224, 106)
+
+  ============================================================
+*/
