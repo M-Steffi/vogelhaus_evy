@@ -280,6 +280,16 @@
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('nav-mobile').classList.toggle('open');
     });
+    const contactTab = document.getElementById('contact-tab');
+    const contactDrawer = document.getElementById('contact-drawer');
+    const contactOverlay = document.getElementById('contact-drawer-overlay');
+    const contactClose = document.getElementById('contact-drawer-close');
+    function openDrawer() { contactDrawer.classList.add('open'); contactOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeDrawer() { contactDrawer.classList.remove('open'); contactOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+    contactTab.addEventListener('click', openDrawer);
+    contactClose.addEventListener('click', closeDrawer);
+    contactOverlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
   </script>
 </body>
 </html>

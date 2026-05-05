@@ -229,6 +229,41 @@
     </div>
   </footer>
 
+  <!-- KONTAKT FLOATING TAB -->
+  <button class="contact-tab" id="contact-tab" aria-label="Kontakt öffnen">
+    <span class="ct-icon">📞</span>
+    Kontakt
+  </button>
+  <div class="contact-drawer-overlay" id="contact-drawer-overlay"></div>
+  <aside class="contact-drawer" id="contact-drawer" role="dialog" aria-modal="true" aria-label="Kontakt">
+    <div class="cd-header">
+      <div class="cd-header-title">Vogelhaus Evy<span>Wir freuen uns auf Ihren Anruf!</span></div>
+      <button class="cd-close" id="contact-drawer-close" aria-label="Schließen">✕</button>
+    </div>
+    <div class="cd-body">
+      <div class="cd-item">
+        <div class="cd-item-icon">📞</div>
+        <div class="cd-item-text"><div class="cd-item-label">Telefon</div><div class="cd-item-value"><a href="tel:+497183307888">07183 / 307888</a></div></div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-item-icon">📠</div>
+        <div class="cd-item-text"><div class="cd-item-label">Telefax</div><div class="cd-item-value">07183 / 307878</div></div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-item-icon">📍</div>
+        <div class="cd-item-text"><div class="cd-item-label">Adresse</div><div class="cd-item-value">Apfelweg 16<br />73635 Rudersberg-Steinenberg</div></div>
+      </div>
+      <div class="cd-item">
+        <div class="cd-item-icon">🕐</div>
+        <div class="cd-item-text"><div class="cd-item-label">Erreichbarkeit</div><div class="cd-item-value">Mo – Sa nach Vereinbarung<small>Sonntag & Feiertage: Ruhetag</small></div></div>
+      </div>
+      <div class="cd-cta">
+        <a href="tel:+497183307888" class="cd-btn-call">📞 Jetzt anrufen</a>
+        <a href="../kontakt/" class="cd-btn-page">Zur Kontaktseite →</a>
+      </div>
+    </div>
+  </aside>
+
   <button id="scroll-top" aria-label="Nach oben">↑</button>
   <script>
     const nav = document.getElementById('main-nav');
@@ -241,6 +276,16 @@
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('nav-mobile').classList.toggle('open');
     });
+    const contactTab = document.getElementById('contact-tab');
+    const contactDrawer = document.getElementById('contact-drawer');
+    const contactOverlay = document.getElementById('contact-drawer-overlay');
+    const contactClose = document.getElementById('contact-drawer-close');
+    function openDrawer() { contactDrawer.classList.add('open'); contactOverlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeDrawer() { contactDrawer.classList.remove('open'); contactOverlay.classList.remove('open'); document.body.style.overflow = ''; }
+    contactTab.addEventListener('click', openDrawer);
+    contactClose.addEventListener('click', closeDrawer);
+    contactOverlay.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
   </script>
 </body>
 </html>
